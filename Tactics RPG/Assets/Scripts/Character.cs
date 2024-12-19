@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Node 
+public class Character : MonoBehaviour
 {
-    public bool passable;
-    public GridObject gridObject;
+   public string Name = "Nameless";
 }
