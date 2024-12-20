@@ -6,12 +6,14 @@ using UnityEngine;
 public class GridMap : MonoBehaviour
 {
     Node[,] grid;
-    [SerializeField] int width = 25;
-    [SerializeField] int length = 25;
+    public int width = 25;
+    public int length = 25;
     [SerializeField] float cellSize = 1f;
     [SerializeField] LayerMask obstacleLayer;
     [SerializeField] LayerMask terrainLayer;
 
+
+    //pathfinding init should find length, then width
     private void Awake()
     {
         GenerateGrid();
@@ -39,6 +41,20 @@ public class GridMap : MonoBehaviour
         {
             return false;
         }
+        return true;
+    }
+
+    public bool CheckBoundary(int posX, int posY)
+    {
+        if (posX < 0 || posX  >= length)
+        {
+            return false;
+        }
+        if (posY < 0 || posY >= width)
+        {
+            return false;
+        }
+
         return true;
     }
 
@@ -98,6 +114,11 @@ public class GridMap : MonoBehaviour
         }
     }
 
+    public bool CheckWalkable(int pos_x, int pos_y)
+    {
+        return grid[pos_x, pos_y].passable;
+    }
+
     public Vector2Int GetGridPosition(Vector3 worldPosition)
     {
         Vector2Int positionOnGrid = new Vector2Int((int)(worldPosition.x / cellSize), (int)(worldPosition.z / cellSize));
@@ -133,7 +154,7 @@ public class GridMap : MonoBehaviour
         
     }
 
-    private Vector3 GetWorldPosition(int x, int y, bool elevation = false)
+    public Vector3 GetWorldPosition(int x, int y, bool elevation = false)
     {
         return new Vector3(x * cellSize, elevation == true ? grid[x,y].elevation : 0f, y * cellSize);
     }
