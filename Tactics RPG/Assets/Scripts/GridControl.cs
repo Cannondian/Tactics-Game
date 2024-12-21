@@ -28,10 +28,10 @@ public class GridControl : MonoBehaviour
 
                 path = pathfinding.FindPath(currentPosition.x, currentPosition.y, gridPosition.x, gridPosition.y);
 
-                Debug.Log(path);
+                //Debug.Log(path);
                 currentPosition = gridPosition;
 
-                Debug.Log("Current position:" + currentPosition);
+                //Debug.Log("Current position:" + currentPosition);
 
                 /*
                 GridObject gridObject = targetGrid.GetPlacedObject(gridPosition);

@@ -12,8 +12,7 @@ public class GridMap : MonoBehaviour
     [SerializeField] LayerMask obstacleLayer;
     [SerializeField] LayerMask terrainLayer;
 
-
-    //pathfinding init should find length, then width
+    // Pathfinding -20, GridObject -10 in Script Execution Order
     private void Awake()
     {
         GenerateGrid();
