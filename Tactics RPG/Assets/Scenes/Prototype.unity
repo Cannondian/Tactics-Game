@@ -673,9 +673,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e57c08893758481dabb41a8acd4bfc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 18
-  length: 18
-  cellSize: 2
+  width: 36
+  length: 36
+  cellSize: 1
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -952,7 +952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e124d88b3d56e4f07acc812aa81da3bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 5
 --- !u!1 &1707442222
 GameObject:
   m_ObjectHideFlags: 0
